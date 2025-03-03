@@ -1,0 +1,1287 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* Загальні стилі */
+body {
+  font-family: "Montserrat", serif;
+  color: rgb(23, 23, 23);
+  background-color: rgb(23, 23, 23);
+}
+
+/* Кастомний курсор */
+.cursor {
+  width: 15px;
+  height: 15px;
+  position: fixed;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: background 0.1s, transform 0.1s;
+  mix-blend-mode: exclusion;
+  z-index: 99999;
+}
+
+/* Навігаційний блок */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 50px;
+  background: rgb(23, 23, 23);
+  border-radius: 0 0 50px 50px;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.navbar:hover {
+  width: 102px;
+  height: 52px;
+}
+
+/* Бургер-меню */
+.menu-toggle {
+  margin-top: 7px;
+  width: 40px;
+  height: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  z-index: 1100;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 1px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Навігаційне меню */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(23, 23, 23, 0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.9);
+  transition: all 0.3s ease-in-out;
+  z-index: 3;
+}
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+}
+.nav-menu li {
+  margin: 20px 0;
+  transition: transform 0.3s ease-out;
+}
+
+.nav-menu li:hover {
+  transform: translateY(-5px);
+}
+
+.nav-menu li:active {
+  transform: translateY(2px) scale(0.95); /* Опускає + трохи стискає */
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 2em;
+}
+
+.nav-menu a:hover {
+  text-decoration: underline;
+}
+/* Відкритий стан */
+.nav-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/* Анімація бургер-іконки */
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(9px, 9px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(9px, -9px);
+}
+
+/* Головний екран */
+.hero {
+  padding: 20px;
+  background: linear-gradient(135deg, #ffe601, #de5900);
+  color: rgb(23, 23, 23);
+  height: 100vh;
+}
+
+.content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  line-height: 1;
+  align-items: start;
+}
+
+.text_wrapper {
+  position: relative;
+}
+
+.hero h1 {
+  font-family: "Poppins", serif;
+  font-size: 2.4em;
+  margin-bottom: 10px;
+  font-weight: 500;
+  z-index: 1;
+  position: relative;
+}
+
+.title_text {
+  font-weight: 900;
+  font-size: 6em;
+  color: hsla(0, 0%, 91%, 0.35);
+  position: absolute;
+  z-index: 0;
+  top: -10%;
+  left: -1%;
+  transform: translateY(-15%);
+}
+
+.little_text {
+  font-size: 0.5em;
+  font-style: italic;
+}
+
+.hero h2 {
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+.text_hero {
+  margin-bottom: 10px;
+}
+
+.button_hero button {
+  padding: 10px 20px;
+  background: rgb(23, 23, 23);
+  color: #ffffff;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  width: 120px;
+  height: 120px;
+  transition: transform 0.3s ease-out;
+}
+
+.button_hero button:hover {
+  transform: translateY(-5px);
+}
+
+.button_hero button:active {
+  transform: translateY(2px) scale(0.95);
+}
+
+.button_hero {
+  display: flex;
+  justify-content: right;
+  width: 100%;
+}
+
+/* Секції */
+.section_about {
+  height: 100%;
+  background-color: rgb(23, 23, 23);
+  color: #ffffff;
+  padding: 20px;
+}
+
+.about-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.about-left h3 {
+  margin-bottom: 10px;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.personal-info {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.personal-info li {
+  margin-bottom: 5px;
+}
+
+/* ======== ПРАВИЙ БЛОК (Опис + акордеони + списки) ======== */
+.about-right h2 {
+  text-align: center;
+}
+
+/* Заголовки */
+.about-text h2,
+.about-text h3 {
+  margin-bottom: 10px;
+}
+.about-text p {
+  margin-bottom: 30px;
+}
+/* ======== АКОРДЕОН ======== */
+.accordion {
+  margin-bottom: 20px;
+}
+
+.accordion-item {
+  border-bottom: 1px solid #444;
+}
+
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  padding: 12px;
+  background: none;
+  border: none;
+  color: #ffb700;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.accordion-header:hover {
+  color: #fff;
+}
+
+.accordion-content {
+  border-left: 3px solid #ffb700;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
+  padding: 0 20px;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 600px;
+  padding: 10px 20px;
+}
+.accordion-content p {
+  font-size: 0.9em;
+}
+/* ======== СПИСКИ НАВИЧОК, МОВ, ІНТЕРЕСІВ ======== */
+.about-lists {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.about-lists h4 {
+  margin-bottom: 6px;
+}
+
+.column {
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column ul li {
+  margin-bottom: 5px;
+}
+
+/* секція сертифікати */
+.certificates {
+  text-align: center;
+  padding: 0px 20px 40px 20px;
+  background: rgb(23, 23, 23);
+  color: #ffffff;
+}
+.certificates h2 {
+  margin-bottom: 10px;
+}
+.certificates-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* max-width: 1200px; */
+  margin: auto;
+}
+.certificates-wrapper {
+  overflow: hidden;
+  width: 84%;
+}
+
+.certificates-list {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.certificate-img {
+  max-width: 250px; /* Максимальна ширина */
+  max-height: 190px; /* Максимальна висота */
+  width: auto; /* Автоматичне масштабування */
+  height: auto; /* Автоматичне масштабування */
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  object-fit: contain;
+}
+
+.certificate-img:hover {
+  transform: scale(1.1);
+}
+
+/* Стрілки */
+.prev,
+.next {
+  background: rgba(23, 23, 23, 0);
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.prev:hover,
+.next:hover {
+  color: rgb(90, 90, 90);
+  font-size: 32px;
+}
+
+.prev {
+  left: 0;
+}
+.next {
+  right: 0;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+/* Модальне вікно */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(23, 23, 23, 0.8);
+}
+
+.modal-content {
+  display: block;
+  max-width: 90%;
+  max-height: 90vh;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: red;
+}
+/* секція портфоліо */
+.portfolio-section {
+  min-height: 100vh;
+  height: 100%;
+  color: #ffffff;
+  padding-bottom: 20px;
+}
+.portfolio_wrapper {
+  min-height: 100vh;
+  height: 100%;
+  margin: auto;
+}
+.portfolio_wrapper h2 {
+  text-align: center;
+  margin-bottom: 26px;
+}
+.portfolio-container-padding {
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+.portfolio-container {
+  border-radius: 12px;
+}
+
+.portfolio-container h3 {
+  color: #ffb700;
+  margin-bottom: 20px;
+}
+
+/* Грид для вебсайтів та журналів */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.portfolio-item {
+  background: rgba(201, 201, 201, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+.portfolio-item p {
+  margin-bottom: 10px;
+}
+.portfolio-item img,
+.portfolio-grid img {
+  width: 100%;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.portfolio-item:hover img,
+.portfolio-grid img:hover {
+  transform: scale(1.05);
+}
+/* Кнопки */
+.view-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #ffffff;
+  color: rgb(23, 23, 23);
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.view-btn:hover {
+  background: #ffffffab;
+}
+
+.section-description {
+  font-size: 1.1em;
+  margin: 0 20px 30px 20px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 📱 Контейнер (мобільний-first) */
+.ux-ui-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.portfolio_ui-ux h3 {
+  margin: 40px 20px 20px 20px;
+}
+/* 🖼 Ліва частина (зображення) */
+.ux-ui-left {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🎥 Права частина (контент) */
+.ux-ui-right {
+  width: 100%;
+  height: 100vh;
+  background: #ffffff;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content_ui_ux {
+  padding: 20px;
+  width: 100%;
+}
+.video_position{
+display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.prototype-video {
+  width: 100%;  /* Робить відео адаптивним */
+  height: 100%; /* Заповнює батьківський контейнер */
+  object-fit: cover; /* Прибирає чорні смуги */
+}
+.video-wrapper {
+  
+  height: 420px; /* Фіксує висоту контейнера */
+  width: 200px;
+  overflow: hidden; 
+  background: white;/* Забезпечує коректне відображення */
+}
+.ux-ui-right p {
+  font-size: 1em;
+  margin: 15px 0;
+  color: #444;
+}
+
+/* 🎨 Кнопка */
+.figma-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1em;
+  color: #000;
+  background: #ffb700;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+}
+
+.figma-btn:hover {
+  background: rgb(206, 148, 1);
+}
+
+.scrolling-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  box-sizing: none;
+}
+
+.columns {
+  display: flex;
+  position: absolute;
+  top: -70vh;
+  left: -2vw;
+  gap: 10px;
+  width: 150vw;
+  height: 300%;
+  transform: rotate(-25deg);
+}
+
+.column {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: -500px;
+  left: 0;
+  width: 100%;
+  gap: 10px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+.photoshop-section {
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+}
+.photoshop-section h3 {
+  color: #ffb700;
+  margin-bottom: 20px;
+  text-align: left;
+}
+.photoshop-section p {
+  font-size: 1.1em;
+  margin-bottom: 30px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* секція обкладинки журналів */
+
+.mag-carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 240px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mag-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+}
+
+.mag-track {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.mag-item {
+  position: absolute;
+  height: 170px;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  cursor: pointer;
+  object-fit: cover;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.mag-item.center {
+  transform: scale(1.2) translateX(0);
+  z-index: 3;
+  opacity: 1;
+}
+
+.mag-item.left-1,
+.mag-item.right-1 {
+  transform: scale(1) translateX(calc(-60%)) rotateY(10deg);
+  z-index: 2;
+  opacity: 0.7;
+}
+
+.mag-item.right-1 {
+  transform: scale(1) translateX(calc(60%)) rotateY(-10deg);
+}
+
+.mag-item.left-2,
+.mag-item.right-2 {
+  transform: scale(0.9) translateX(calc(-110%)) rotateY(15deg);
+  z-index: 1;
+  opacity: 0.6;
+}
+
+.mag-item.right-2 {
+  transform: scale(0.9) translateX(calc(110%)) rotateY(-15deg);
+}
+
+.mag-item.hidden {
+  opacity: 0;
+  transform: scale(0.9);
+  pointer-events: none;
+}
+
+/* Стилі для кнопок */
+.mag-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+  transition: 0.3s;
+}
+
+.mag-nav:hover {
+  color: #aaa;
+}
+
+.mag-prev {
+  left: 0px;
+}
+
+.mag-next {
+  right: 0px;
+}
+
+/* Повноекранний перегляд */
+.mag-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(23, 23, 23, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.mag-modal img {
+  max-width: 90%;
+  max-height: 90%;
+}
+/* секція журнал */
+
+.fashion-portfolio-section h3 {
+  color: #ffb700;
+  margin: 20px;
+}
+.fashion-portfolio-section p {
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 20px 30px 20px;
+}
+.fashion-portfolio {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.fashion-main-image {
+  width: 100%;
+  height: 100%;
+}
+.fashion-main-image img {
+  width: 100%;
+}
+.fashion-description {
+  background: white;
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fashion-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.fashion-gallery-item {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.fashion-gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.fashion-fullscreen {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(23, 23, 23, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.fashion-fullscreen img {
+  max-width: 90%;
+  max-height: 90%;
+}
+/* секція контакти */
+#contact {
+  min-height: 100vh;
+  height: 100%;
+  background-color: rgb(23, 23, 23);
+  color: #ffffff;
+  padding: 40px 20px;
+}
+.section_contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+  margin: auto;
+}
+
+.section_contact h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.section_contact p {
+  margin-bottom: 20px;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.contact-link {
+  color: #ffffff;
+  width: 140px;
+  height: 140px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.4em;
+  padding: 12px;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+  background: rgba(201, 201, 201, 0.2);
+  border: 1px solid #ffb700;
+}
+
+.contact-link:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+/* Футер */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+  font-size: 0.9em;
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  .hero h1 {
+    font-size: 3.2em;
+  }
+  .hero h2 {
+    font-size: 1.8em;
+  }
+  .text_hero {
+    font-size: 1.2em;
+  }
+  .title_text {
+    font-size: 8em;
+  }
+  .button_hero button {
+    font-size: 1.4em;
+    width: 170px;
+    height: 170px;
+  }
+  .about-left h3 {
+    font-size: 1.4em;
+  }
+  .personal-info {
+    font-size: 1.2em;
+  }
+  .profile-pic {
+    width: 190px;
+    height: 190px;
+  }
+  .about-text h2 {
+    font-size: 1.8em;
+  }
+  .about-text p {
+    font-size: 1.2em;
+  }
+  .accordion-content p {
+    font-size: 1em;
+  }
+  .accordion-header {
+    font-size: 1.2em;
+  }
+  .about-text h3 {
+    font-size: 1.4em;
+  }
+  .about-lists {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: start;
+  }
+  .column h4 {
+    font-size: 1.2em;
+    margin-bottom: 12px;
+  }
+  .column li {
+    font-size: 1em;
+  }
+  .column {
+    width: 30%;
+    text-align: left;
+  }
+  .certificates-wrapper {
+    width: 90%;
+  }
+  .certificates h2 {
+    font-size: 1.8em;
+    margin-bottom: 26px;
+  }
+  /* секція портфоліо */
+  .portfolio_wrapper h2 {
+    font-size: 1.8em;
+    margin-bottom: 26px;
+  }
+  .portfolio-container h3 {
+    font-size: 1.4em;
+  }
+  .portfolio-item p {
+    font-size: 1.2em;
+  }
+  .portfolio-item a {
+    font-size: 1em;
+  }
+
+  /* секція портфоліо прототип фігма */
+  .ux-ui-container {
+    flex-direction: row;
+  }
+  .ux-ui-left {
+    width: 50vw;
+  }
+  .ux-ui-right {
+    width: 50vw;
+  }
+   .ux-ui-right p{
+    font-size: 1.2em;
+  }
+  .video-wrapper {
+  
+  height: 460px; 
+  width: 220px;
+}
+  .columns {
+    top: -70vh;
+    left: -4vw;
+    gap: 10px;
+    width: 80vw;
+    height: 300%;
+  }
+
+  .photoshop-section h3 {
+    font-size: 1.4em;
+  }
+   .photoshop-section p{
+    font-size: 1.2em;
+  }
+  .photoshop_img {
+    max-width: 350px; /* Максимальна ширина */
+    max-height: 290px; /* Максимальна висота */
+  }
+.section-description{
+  font-size: 1.2em;
+}
+  /* секція обкладинки журналів */
+  .mag-item {
+    width: auto;
+    height: 230px;
+  }
+
+  .mag-nav {
+    font-size: 30px;
+  }
+  .mag-carousel-container {
+    height: 280px;
+  }
+  /* секція журнал */
+  .fashion-portfolio {
+    flex-direction: row;
+    height: 100vh;
+  }
+
+  .fashion-main-image {
+    width: 50%;
+  }
+
+  .fashion-description {
+    width: 50%;
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .fashion-gallery {
+    gap: 15px;
+  }
+  .fashion-portfolio-section h3 {
+    font-size: 1.4em;
+  }
+  .fashion-portfolio-section p {
+    font-size: 1.2em;
+  }
+  /* секція контакти */
+  .contact-links {
+    flex-direction: row;
+  }
+  .section_contact h2 {
+    font-size: 1.8em;
+    margin-bottom: 26px;
+  }
+  .section_contact p {
+    font-size: 1.2em;
+    margin-bottom: 26px;
+  }
+}
+
+@media (min-width: 991px) {
+  .content {
+    max-width: 940px;
+  }
+  .hero h1 {
+    font-size: 5em;
+  }
+  .hero h2 {
+    font-size: 2.8em;
+  }
+  .text_hero {
+    font-size: 1.4em;
+  }
+  .button_hero button {
+    font-size: 1.8em;
+    width: 240px;
+    height: 240px;
+  }
+  .title_text {
+    font-size: 12em;
+  }
+  .section_about {
+    padding: 40px;
+  }
+  .about-left h3 {
+    font-size: 1.6em;
+  }
+  .personal-info {
+    font-size: 1.2em;
+  }
+  .profile-pic {
+    width: 240px;
+    height: 240px;
+    margin-bottom: 26px;
+  }
+  .personal-info li {
+    margin-bottom: 8px;
+  }
+  .about-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1300px;
+    margin: auto;
+  }
+  .about-text h2 {
+    font-size: 2.8em;
+    margin-bottom: 18px;
+  }
+  .about-text p {
+    font-size: 1.4em;
+  }
+  .about-text h3 {
+    font-size: 1.8em;
+  }
+  .accordion-content p {
+    font-size: 1.2em;
+  }
+  .accordion-header {
+    font-size: 1.4em;
+  }
+
+  .column h4 {
+    font-size: 1.4em;
+    margin-bottom: 16px;
+  }
+  .column li {
+    font-size: 1.2em;
+  }
+  /* ЛІВИЙ БЛОК */
+  .about-left {
+    width: 30%;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  /* ПРАВИЙ БЛОК */
+  .about-right {
+    width: 65%;
+    text-align: left;
+  }
+
+  /* СПИСКИ */
+  .about-lists {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+  }
+  .certificates-wrapper {
+    width: 90%;
+  }
+  .certificates h2 {
+    font-size: 2.8em;
+    margin-bottom: 26px;
+  }
+  .certificate-img {
+    max-width: 350px; /* Максимальна ширина */
+    max-height: 270px; /* Максимальна висота */
+  }
+  /* секція портфоліо */
+
+  .portfolio_wrapper h2 {
+    font-size: 2.8em;
+    margin-bottom: 26px;
+  }
+  .portfolio-container h3 {
+    font-size: 1.8em;
+  }
+  .portfolio-item p {
+    font-size: 1.2em;
+  }
+  .portfolio-item a {
+    font-size: 1.2em;
+  }
+
+  /* секція портфоліо прототип фігма */
+  .ux-ui-container {
+    flex-direction: row;
+  }
+  .ux-ui-left {
+    width: 50vw;
+  }
+  .ux-ui-right {
+    width: 50vw;
+  }
+  .ux-ui-right p{
+    font-size: 1.4em;
+  }
+  .video-wrapper {
+  
+  height: 500px; 
+  width: 240px;
+}
+.figma-btn{
+  font-size: 1.2em;
+}
+  .columns {
+    top: -70vh;
+    left: -2vw;
+    gap: 10px;
+    width: 80vw;
+    height: 300%;
+  }
+
+  .photoshop-section h3 {
+    font-size: 1.8em;
+  }
+  .photoshop-section p{
+    font-size: 1.4em;
+  }
+  .photoshop_img {
+    max-height: 490px; /* Максимальна висота */
+  }
+.section-description{
+  font-size: 1.4em;
+}
+  /* секція обкладинки журналів */
+  .mag-item {
+    width: auto;
+    height: 350px;
+  }
+
+  .mag-nav {
+    font-size: 30px;
+  }
+  .mag-carousel-container {
+    height: 450px;
+  }
+  /* секція журнал */
+  .fashion-portfolio {
+    flex-direction: row;
+    height: 100%;
+    
+  }
+
+  .fashion-main-image {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.fashion-main-image img{
+  width: 80%;
+}
+  .fashion-description {
+    width: 50%;
+    text-align: left;
+    padding-left: 20px;
+
+  }
+
+  .fashion-gallery {
+    gap: 15px;
+  }
+  .fashion-portfolio-section h3 {
+    font-size: 1.8em;
+  }
+  .fashion-portfolio-section p {
+    font-size: 1.4em;
+  }
+  /* секція контакти */
+  .contact-links {
+    flex-direction: row;
+  }
+  .section_contact {
+    max-width: 940px;
+  }
+  .section_contact h2 {
+    font-size: 2.8em;
+    margin-bottom: 26px;
+  }
+  .section_contact p {
+    font-size: 1.4em;
+    margin-bottom: 32px;
+  }
+}

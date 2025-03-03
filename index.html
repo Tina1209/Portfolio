@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liubka Kristina Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Delius&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="bilder/favicon.png">
+  </head>
+  <body>
+    <div class="cursor"></div>
+    <!-- Фіксоване напівкругле меню -->
+    <nav class="navbar">
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <!-- Список навігації -->
+    <div class="nav-menu" id="navMenu">
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">Über mich</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </div>
+
+    <!-- Головний екран -->
+    <header class="hero" id="hero">
+      <div class="content">
+        <div class="text_wrapper">
+          <p class="title_text">Hallo!</p>
+          <h1>
+            <br /><span class="little_text">Ich bin </span>Kristina Liubka
+          </h1>
+        </div>
+
+        <h2>UI/UX-Designer / Webdesigner und Frontend-Entwickler</h2>
+        <p class="text_hero">
+          Ich erstelle praktische, ästhetische und funktionale
+          Benutzeroberflächen
+        </p>
+        <div class="button_hero">
+          <button class="scroll-link" data-target="portfolio">
+            Portfolio ansehen
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Про мене -->
+    <section id="about" class="section_about">
+      <div class="about-container">
+        <!-- ЛІВИЙ БЛОК -->
+        <div class="about-left">
+          <img src="bilder/Avatar.webp" alt="Foto" class="profile-pic" />
+          <h3>Persönliches</h3>
+          <div class="wrapper_ul_about">
+            <ul class="personal-info">
+              <li><strong>Name:</strong> Kristina Liubka</li>
+              <li><strong>Geburtsdatum:</strong> 12. September 1998</li>
+              <li><strong>Wohnort:</strong> Potsdam, Deutschland</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- ПРАВИЙ БЛОК -->
+        <div class="about-right">
+          <!-- ТЕКСТ + АКОРДЕОНИ -->
+          <div class="about-text">
+            <h2>Über mich</h2>
+            <p>
+              Ich bin UX/UI-Designer, Webdesigner und Frontend-Entwickler mit
+              Leidenschaft für funktionale und ästhetische Benutzeroberflächen.
+            </p>
+
+            <h3>Berufserfahrung</h3>
+            <div class="accordion">
+              <div class="accordion-item">
+                <button class="accordion-header">
+                  Produktionsleiter/ Produktionsverfahrenstechnik – ОMELIA
+                  ATELIER
+                </button>
+                <div class="accordion-content">
+                  <p>
+                    Erfahrung in Produktmusterentwicklung, Kalkulation,
+                    Prozessplanung und Mitarbeiterschulung. Rekrutierung neuer
+                    Mitarbeiter, Erstellung von Unternehmensdokumentationen und
+                    Layouts für Websites sowie Analyse von Verkaufsberichten.
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">
+                  Designer / Bekleidungstechniker – Kuzyomin
+                </button>
+                <div class="accordion-content">
+                  <p>
+                    Erfahrung in der Produktmusterentwicklung, technischen
+                    Vektorzeichnungen, Modedesign-Umsetzung und
+                    Prozessoptimierung. Erstellung technischer Dokumentationen
+                    und Musterausschnitte.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <h3>Bildungsweg</h3>
+            <div class="accordion">
+              <div class="accordion-item">
+                <button class="accordion-header">
+                  Weiterbildung UX/UI-Webdesign Frontend – WBS Training
+                </button>
+                <div class="accordion-content">
+                  <p>
+                    <strong>Bereich:</strong> UX/UI-Design und Webentwicklung
+                  </p>
+                  <p>
+                    <strong>Schwerpunkte:</strong> <br />
+                    - Nutzerzentrierte Gestaltung <br />
+                    - Prototyping und Wireframing <br />
+                    - Moderne Webtechnologien und Frontend-Entwicklung
+                  </p>
+
+                  <p>
+                    <strong>Abschluss:</strong> Zertifizierte
+                    Weiterbildung(WBS-Zertifikat mit CPUX-Zertifikat)
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion-header">
+                  Master in Verfahrensingenieurwesen – Kiew Nationales
+                  Universität für Technologie und Design
+                </button>
+                <div class="accordion-content">
+                  <p>
+                    <strong>Studienrichtung:</strong> Technologien der
+                    Leichtindustrie
+                  </p>
+                  <p><strong>Schwerpunkt:</strong> Verfahrensingenieurwesen</p>
+                  <p>
+                    <strong>Abschluss:</strong> Master of Science (M.Sc.), mit
+                    Auszeichnung
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- СПИСКИ НАВИЧОК, МОВ, ІНТЕРЕСІВ -->
+          <div class="about-lists">
+            <div class="column">
+              <h4>Kenntnisse</h4>
+              <ul>
+                <li>UX/UI Design</li>
+                <li>HTML5, CSS3, JavaScript</li>
+                <li>Figma</li>
+                <li>Adobe Photoshop</li>
+                <li>Adobe Illustrator</li>
+                <li>Inkscape, Xara</li>
+                <li>MS Office</li>
+              </ul>
+            </div>
+            <div class="column">
+              <h4>Sprachen</h4>
+              <ul>
+                <li>Deutsch (B2)</li>
+                <li>Englisch (B2)</li>
+                <li>Ukrainisch (Muttersprache)</li>
+                <li>Russisch (Muttersprache)</li>
+              </ul>
+            </div>
+            <div class="column">
+              <h4>Interessen</h4>
+              <ul>
+                <li>Kreatives Zeichnen</li>
+                <li>Inneneinrichtung</li>
+                <li>Reisen</li>
+                <li>Kunsthandwerk</li>
+                <li>lebenslanges Lernen</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="certificates">
+      <h2>Meine Zertifikate & Diplome</h2>
+      <div class="certificates-container">
+        <button class="prev">&#10094;</button>
+        <div class="certificates-wrapper">
+          <div class="certificates-list">
+            <img
+              src="bilder/WBS_Zertifikat.webp"
+              alt="Zertifikat 1"
+              class="certificate-img"
+              onclick="openModal(this)"
+            />
+            <img
+              src="bilder/MastersDiploma.webp"
+              alt="Zertifikat 1"
+              class="certificate-img"
+              onclick="openModal(this)"
+            />
+            <img
+              src="bilder/Annerkenung.webp"
+              alt="Zertifikat 1"
+              class="certificate-img"
+              onclick="openModal(this)"
+            />
+            <img
+              src="bilder/FreeCodeCamp_ResponsiveWebdesign_KristinaLiubka1.webp"
+              alt="Zertifikat 1"
+              class="certificate-img"
+              onclick="openModal(this)"
+            />
+            <img
+              src="bilder/FreeCodeCamp_JavaScript_KristinaLiubka1.webp"
+              alt="Zertifikat 2"
+              class="certificate-img"
+              onclick="openModal(this)"
+            />
+            <img
+              src="bilder/AdobeIllustrator_Essential_Skills.webp"
+              alt="Zertifikat 3"
+              class="certificate-img"
+              onclick="openModal(this)"
+            />
+            <img
+              src="bilder/Figma_Grundkurs.webp"
+              alt="Zertifikat 4"
+              class="certificate-img"
+              onclick="openModal(this)"
+            />
+            <img
+              src="bilder/jQuery_Grundkurs_1.webp"
+              alt="Zertifikat 5"
+              class="certificate-img"
+              onclick="openModal(this)"
+            />
+            <img
+              src="bilder/jQuery_Grundkurs_2.webp"
+              alt="Zertifikat 6"
+              class="certificate-img"
+              onclick="openModal(this)"
+            />
+             <img
+              src="bilder/Deutsch_B2.webp"
+              alt="Zertifikat 7"
+              class="certificate-img"
+              onclick="openModal(this)"
+            />
+            <img
+              src="bilder/OpenLearn.webp"
+              alt="Zertifikat 7"
+              class="certificate-img"
+              onclick="openModal(this)"
+            />
+          </div>
+        </div>
+        <button class="next">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- Модальне вікно для збільшення фото -->
+    <div id="modal" class="modal" onclick="closeModal()">
+      <span class="close"></span>
+      <img class="modal-content" id="modal-img" />
+    </div>
+
+    <!-- Портфоліо -->
+    <section id="portfolio" class="portfolio-section">
+      <div class="portfolio_wrapper">
+        <h2>Mein Portfolio</h2>
+        <!-- 1. Webseiten -->
+        <div class="portfolio-container portfolio-container-padding">
+          <h3>Webseiten</h3>
+          <div class="portfolio-grid">
+            <div class="portfolio-item">
+              <p>Website Anna Müller Beauty Room</p>
+              <a href="https://tina1209.github.io/Anna_Muller_beauty_room/index.html" target="_blank"><img src="bilder/AnnaMulerBeautyRoom.webp" alt="Webseite 1" /></a>
+              <a href="https://tina1209.github.io/Anna_Muller_beauty_room/index.html" target="_blank" class="view-btn"
+                >Website ansehen</a
+              >
+            </div>
+            <div class="portfolio-item">
+              <p>Website GutJahr Dachtechnik</p>
+              <a href="https://tina1209.github.io/GutJahrDachtechnik/" target="_blank"><img src="bilder/GutJahrDachtechnik.webp" alt="Webseite 2" /></a>
+              <a href="https://tina1209.github.io/GutJahrDachtechnik/" target="_blank" class="view-btn"
+                >Website ansehen</a
+              >
+            </div>
+            <div class="portfolio-item">
+              <p>Webseite BodyFit</p>
+              <a href="https://tina1209.github.io/BodyFit/" target="_blank"><img src="bilder/BodyFit.webp" alt="Webseite 3" /></a>
+              <a href="https://tina1209.github.io/BodyFit/" target="_blank" class="view-btn"
+                >Website ansehen</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-container portfolio_ui-ux">
+          <h3>UX/UI Design</h3>
+          <p class="section-description">
+            Entwicklung eines modernen und benutzerfreundlichen Prototyps für
+            eine mobile Accessoires-Shop-App.
+          </p>
+
+          <div class="ux-ui-container">
+            <!-- Ліва частина -->
+            <div class="ux-ui-left">
+              <section class="scrolling-container">
+                <div class="columns">
+                  <div class="column" style="--direction: 1">
+                    <div class="image-wrapper">
+                      <img src="bilder/Categories.webp" alt="Image 1" />
+                      <img src="bilder/Categories.webp" alt="Image 1" />
+                      <img src="bilder/Categories.webp" alt="Image 1" />
+                      <img src="bilder/Categories.webp" alt="Image 1" />
+                      <img src="bilder/Categories.webp" alt="Image 1" />
+                    </div>
+                  </div>
+                  <div class="column" style="--direction: -1">
+                    <div class="image-wrapper">
+                      <img src="bilder/Search 1 colum.webp" alt="Image 2" />
+                      <img src="bilder/Search 1 colum.webp" alt="Image 2" />
+                      <img src="bilder/Search 1 colum.webp" alt="Image 2" />
+                      <img src="bilder/Search 1 colum.webp" alt="Image 2" />
+                      <img src="bilder/Search 1 colum.webp" alt="Image 2" />
+                    </div>
+                  </div>
+                  <div class="column" style="--direction: 1">
+                    <div class="image-wrapper">
+                      <img src="bilder/Favourite.webp" alt="Image 3" />
+                      <img src="bilder/Favourite.webp" alt="Image 3" />
+                      <img src="bilder/Favourite.webp" alt="Image 3" />
+                      <img src="bilder/Favourite.webp" alt="Image 3" />
+                      <img src="bilder/Favourite.webp" alt="Image 3" />
+                    </div>
+                  </div>
+                  <div class="column" style="--direction: -1">
+                    <div class="image-wrapper">
+                      <img src="bilder/Home.webp" alt="Image 4" />
+                      <img src="bilder/Home.webp" alt="Image 4" />
+                      <img src="bilder/Home.webp" alt="Image 4" />
+                      <img src="bilder/Home.webp" alt="Image 4" />
+                      <img src="bilder/Home.webp" alt="Image 4" />
+                    </div>
+                  </div>
+                  <div class="column" style="--direction: 1">
+                    <div class="image-wrapper">
+                      <img src="bilder/Detail.webp" alt="Image 5" />
+                      <img src="bilder/Detail.webp" alt="Image 5" />
+                      <img src="bilder/Detail.webp" alt="Image 5" />
+                      <img src="bilder/Detail.webp" alt="Image 5" />
+                      <img src="bilder/Detail.webp" alt="Image 5" />
+                    </div>
+                  </div>
+                  <div class="column" style="--direction: -1">
+                    <div class="image-wrapper">
+                      <img src="bilder/Search 2 colum.webp" alt="Image 6" />
+                      <img src="bilder/Search 2 colum.webp" alt="Image 6" />
+                      <img src="bilder/Search 2 colum.webp" alt="Image 6" />
+                      <img src="bilder/Search 2 colum.webp" alt="Image 6" />
+                      <img src="bilder/Search 2 colum.webp" alt="Image 6" />
+                      <img src="bilder/Search 2 colum.webp" alt="Image 6" />
+                      <img src="bilder/Search 2 colum.webp" alt="Image 6" />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <!-- Права частина -->
+            <div class="ux-ui-right">
+              <div class="content_ui_ux">
+                <div class="video_position">
+                  <div class="video-wrapper">
+                    <video class="prototype-video" autoplay loop muted>
+                      <source src="bilder/prototypApp.mp4" type="video/mp4" />
+                      Dein Browser unterstützt dieses Videoformat nicht.
+                    </video>
+                  </div>
+                </div>
+
+                <p>
+                  Erkunde den interaktiven Prototyp des Accessoires-Shops und
+                  erlebe die Benutzererfahrung.
+                </p>
+                <a
+                  href="https://www.figma.com/proto/cm9ALhau1lDSs9tycGvaWh/Accessories-Shop-App?page-id=0%3A1&node-id=22-423&p=f&viewport=122%2C694%2C0.14&t=YeQ6BUK9dpAMtBX7-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1%3A47&show-proto-sidebar=1"
+                  target="_blank"
+                  class="figma-btn"
+                >
+                  Prototyp in Figma ansehen
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Фотошоп -->
+    <section class="photoshop-section">
+      <h3>Magazine Covers</h3>
+      <p>
+        Entwicklung einer Reihe professioneller Magazin-Cover-Designs zur
+        Demonstration fortgeschrittener Photoshop-Kenntnisse.
+      </p>
+      <div class="mag-carousel-container">
+        <button class="mag-nav mag-prev" onclick="magPrevSlide()">
+          &laquo;
+        </button>
+        <div class="mag-carousel">
+          <div class="mag-track">
+            <img src="bilder/Cover-NeoNest-1.webp" class="mag-item" alt="Cover magazin NeoNest"/>
+            <img src="bilder/Cover-NeoNest-2.webp" class="mag-item" alt="Cover magazin NeoNest"/>
+            <img src="bilder/Cover-NeoNest-3.webp" class="mag-item" alt="Cover magazin NeoNest"/>
+            <img src="bilder/Cover-UrbanAllur-1.webp" class="mag-item" alt="Cover magazin UrbanAllur"/>
+            <img src="bilder/Cover-UrbanAllur-2.webp" class="mag-item" alt="Cover magazin UrbanAllur"/>
+            <img src="bilder/Cover-UrbanAllur-3.webp" class="mag-item" alt="Cover magazin UrbanAllur"/>
+            <img src="bilder/Cover-The-Next-1.webp" class="mag-item" alt="Cover magazin The Next"/>
+            <img src="bilder/Cover-The-Next-2.webp" class="mag-item" alt="Cover magazin The Next"/>
+            <img src="bilder/Cover-The-Next-3.webp" class="mag-item" alt="Cover magazin The Next"/>
+          </div> 
+        </div>
+        <button class="mag-nav mag-next" onclick="magNextSlide()">
+          &raquo;
+        </button>
+      </div>
+
+      <!-- Повноекранний перегляд -->
+      <div id="mag-modal" class="mag-modal">
+        <span class="mag-close" onclick="magCloseModal()"></span>
+        <img id="mag-modal-img" />
+      </div>
+    </section>
+
+    <section class="fashion-portfolio-section">
+      <h3>Magazingestaltung & Bildbearbeitung in Photoshop</h3>
+      <p>
+        Konzeption, Gestaltung und Bearbeitung von Inhalten für ein Modemagazin,
+        das die gegensätzlichen Stilrichtungen Minimalismus und Maximalismus
+        thematisiert.
+      </p>
+      <div class="fashion-portfolio">
+        <div class="fashion-main-image">
+          <img src="bilder/Cover.webp" alt="cover magazin mode" />
+        </div>
+        <div class="fashion-description">
+          <div class="fashion-gallery">
+            <img
+              src="bilder/Seite1.webp"
+              alt="Seite ArbanAllur magazin"
+              class="fashion-gallery-item"
+            />
+            <img
+              src="bilder/Seite2.webp"
+              alt="Seite ArbanAllur magazin"
+              class="fashion-gallery-item"
+            />
+            <img
+              src="bilder/Seite3.webp"
+              alt="Seite ArbanAllur magazin"
+              class="fashion-gallery-item"
+            />
+            <img
+              src="bilder/Seite4.webp"
+              alt="Seite ArbanAllur magazin"
+              class="fashion-gallery-item"
+            />
+            <img
+              src="bilder/Seite5.webp"
+              alt="Seite ArbanAllur magazin"
+              class="fashion-gallery-item"
+            />
+            <img
+              src="bilder/Seite6.webp"
+              alt="Seite ArbanAllur magazin"
+              class="fashion-gallery-item"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="fashion-fullscreen" id="fashion-modal">
+      <img id="fashion-modal-img" src="" alt="Open photo" />
+    </div>
+    <!-- Контакти -->
+    <section id="contact">
+      <div class="section_contact">
+        <h2>Lassen Sie uns in Kontakt treten!</h2>
+        <p>
+          Ich bin immer offen für spannende Projekte, kreative Herausforderungen
+          und neue berufliche Möglichkeiten. Schreiben Sie mir eine Nachricht –
+          lassen Sie uns gemeinsam etwas Großartiges schaffen!
+        </p>
+
+        <div class="contact-links">
+          <a href="mailto:lubkakris794@gmail.com" class="contact-link email"
+            >E-Mail</a
+          >
+          <a
+            href="https://github.com/Tina1209"
+            target="_blank"
+            class="contact-link github"
+            >GitHub</a
+          >
+          <a
+            href="www.linkedin.com/in/kristina-liubka-83b5b0303"
+            target="_blank"
+            class="contact-link linkedin"
+          >
+            LinkedIn</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+      <p>© 2025 Kristina Liubka | Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
