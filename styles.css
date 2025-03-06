@@ -357,10 +357,8 @@ body {
 }
 
 .certificate-img {
-  max-width: 250px; /* Максимальна ширина */
-  max-height: 190px; /* Максимальна висота */
   width: auto; /* Автоматичне масштабування */
-  height: auto; /* Автоматичне масштабування */
+  height: 190px; /* Автоматичне масштабування */
   margin: 10px;
   border-radius: 10px;
   cursor: pointer;
@@ -1164,8 +1162,7 @@ display: flex;
     margin-bottom: 26px;
   }
   .certificate-img {
-    max-width: 350px; /* Максимальна ширина */
-    max-height: 270px; /* Максимальна висота */
+    height: 220px; /* Максимальна висота */
   }
   /* секція портфоліо */
 

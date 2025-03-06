@@ -1,11 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
   const cursor = document.querySelector(".cursor");
 
+  function updateCursorVisibility() {
+    if (window.innerWidth >= 991) {
+      // Відображаємо тільки на десктопі (від 991px)
+      cursor.style.display = "block";
+    } else {
+      cursor.style.display = "none";
+    }
+  }
+
   document.addEventListener("mousemove", (e) => {
-    cursor.style.transform = `translate(${e.clientX - 7.5}px, ${
-      e.clientY - 7.5
-    }px)`;
+    if (window.innerWidth >= 991) {
+      // Ефект працює тільки на десктопі
+      cursor.style.transform = `translate(${e.clientX - 7.5}px, ${
+        e.clientY - 7.5
+      }px)`;
+    }
   });
+
+  // Викликаємо при завантаженні та зміні розміру вікна
+  updateCursorVisibility();
+  window.addEventListener("resize", updateCursorVisibility);
   navigation();
   scrollingPortfolio();
 });
@@ -74,7 +90,7 @@ const items = document.querySelectorAll(".certificate-img");
 const wrapper = document.querySelector(".certificates-wrapper");
 
 let scrollAmount = 0;
-const maxScroll = items.length * 320 - wrapper.offsetWidth;
+const maxScroll = items.length * 270 - wrapper.offsetWidth;
 
 document.querySelector(".next").addEventListener("click", () => {
   if (scrollAmount < maxScroll) {
