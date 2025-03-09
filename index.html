@@ -164,9 +164,11 @@
               <ul>
                 <li>UX/UI Design</li>
                 <li>HTML5, CSS3, JavaScript</li>
+                <li>Bootstrap, jQuery, Sass</li>
                 <li>Figma</li>
                 <li>Adobe Photoshop</li>
                 <li>Adobe Illustrator</li>
+                <li>Adobe InDesign</li>
                 <li>Inkscape, Xara</li>
                 <li>MS Office</li>
               </ul>
@@ -205,61 +207,67 @@
               src="bilder/WBS_Zertifikat.webp"
               alt="Zertifikat 1"
               class="certificate-img"
-              onclick="openModal(this)"
+               onclick="openModal(this, 'modal', 'modal-img')"
             />
             <img
               src="bilder/MastersDiploma.webp"
               alt="Zertifikat 1"
               class="certificate-img"
-              onclick="openModal(this)"
+               onclick="openModal(this, 'modal', 'modal-img')"
             />
             <img
               src="bilder/Annerkenung.webp"
               alt="Zertifikat 1"
               class="certificate-img"
-              onclick="openModal(this)"
+               onclick="openModal(this, 'modal', 'modal-img')"
             />
             <img
               src="bilder/FreeCodeCamp_ResponsiveWebdesign_KristinaLiubka1.webp"
               alt="Zertifikat 1"
               class="certificate-img"
-              onclick="openModal(this)"
+               onclick="openModal(this, 'modal', 'modal-img')"
             />
             <img
               src="bilder/FreeCodeCamp_JavaScript_KristinaLiubka1.webp"
               alt="Zertifikat 2"
               class="certificate-img"
-              onclick="openModal(this)"
+               onclick="openModal(this, 'modal', 'modal-img')"
             />
             <img
               src="bilder/AdobeIllustrator_Essential_Skills.webp"
               alt="Zertifikat 3"
               class="certificate-img"
-              onclick="openModal(this)"
+               onclick="openModal(this, 'modal', 'modal-img')"
+            />
+             <img
+              src="bilder/Adobe_InDesign_Certificat.webp"
+              alt="Zertifikat 3"
+              class="certificate-img"
+               onclick="openModal(this, 'modal', 'modal-img')"
             />
             <img
               src="bilder/Figma_Grundkurs.webp"
               alt="Zertifikat 4"
               class="certificate-img"
-              onclick="openModal(this)"
+               onclick="openModal(this, 'modal', 'modal-img')"
             />
             <img
               src="bilder/jQuery_Grundkurs_1.webp"
               alt="Zertifikat 5"
               class="certificate-img"
-              onclick="openModal(this)"
+              onclick="openModal(this, 'modal', 'modal-img')"
             />
             <img
               src="bilder/jQuery_Grundkurs_2.webp"
               alt="Zertifikat 6"
               class="certificate-img"
-              onclick="openModal(this)"
+               onclick="openModal(this, 'modal', 'modal-img')"
             />
              <img
               src="bilder/Deutsch_B2.webp"
               alt="Zertifikat 7"
               class="certificate-img"
-              onclick="openModal(this)"
+               onclick="openModal(this, 'modal', 'modal-img')"
             />
             <img
               src="bilder/OpenLearn.webp"
@@ -274,10 +282,10 @@
     </section>
 
     <!-- Модальне вікно для збільшення фото -->
-    <div id="modal" class="modal" onclick="closeModal()">
-      <span class="close"></span>
-      <img class="modal-content" id="modal-img" />
-    </div>
+    <div id="modal" class="modal" onclick="closeModal('modal')">
+  <span class="close" onclick="closeModal('modal')">&times;</span>
+  <img class="certificate-modal-img" id="modal-img" />
+</div>
 
     <!-- Портфоліо -->
     <section id="portfolio" class="portfolio-section">
@@ -425,29 +433,27 @@
         </button>
         <div class="mag-carousel">
           <div class="mag-track">
-            <img src="bilder/Cover-NeoNest-1.webp" class="mag-item" alt="Cover magazin NeoNest"/>
-            <img src="bilder/Cover-NeoNest-2.webp" class="mag-item" alt="Cover magazin NeoNest"/>
-            <img src="bilder/Cover-NeoNest-3.webp" class="mag-item" alt="Cover magazin NeoNest"/>
-            <img src="bilder/Cover-UrbanAllur-1.webp" class="mag-item" alt="Cover magazin UrbanAllur"/>
-            <img src="bilder/Cover-UrbanAllur-2.webp" class="mag-item" alt="Cover magazin UrbanAllur"/>
-            <img src="bilder/Cover-UrbanAllur-3.webp" class="mag-item" alt="Cover magazin UrbanAllur"/>
-            <img src="bilder/Cover-The-Next-1.webp" class="mag-item" alt="Cover magazin The Next"/>
-            <img src="bilder/Cover-The-Next-2.webp" class="mag-item" alt="Cover magazin The Next"/>
-            <img src="bilder/Cover-The-Next-3.webp" class="mag-item" alt="Cover magazin The Next"/>
+            <img src="bilder/Cover-NeoNest-1.webp" class="mag-item" alt="Cover magazin NeoNest" onclick="openModal(this, 'mag-modal', 'mag-modal-img')"/>
+            <img src="bilder/Cover-NeoNest-2.webp" class="mag-item" alt="Cover magazin NeoNest" onclick="openModal(this, 'mag-modal', 'mag-modal-img')"/>
+            <img src="bilder/Cover-NeoNest-3.webp" class="mag-item" alt="Cover magazin NeoNest" onclick="openModal(this, 'mag-modal', 'mag-modal-img')"/>
+            <img src="bilder/Cover-UrbanAllur-1.webp" class="mag-item" alt="Cover magazin UrbanAllur" onclick="openModal(this, 'mag-modal', 'mag-modal-img')"/>
+            <img src="bilder/Cover-UrbanAllur-2.webp" class="mag-item" alt="Cover magazin UrbanAllur" onclick="openModal(this, 'mag-modal', 'mag-modal-img')"/>
+            <img src="bilder/Cover-UrbanAllur-3.webp" class="mag-item" alt="Cover magazin UrbanAllur" onclick="openModal(this, 'mag-modal', 'mag-modal-img')"/>
+            <img src="bilder/Cover-The-Next-1.webp" class="mag-item" alt="Cover magazin The Next" onclick="openModal(this, 'mag-modal', 'mag-modal-img')"/>
+            <img src="bilder/Cover-The-Next-2.webp" class="mag-item" alt="Cover magazin The Next" onclick="openModal(this, 'mag-modal', 'mag-modal-img')"/>
+            <img src="bilder/Cover-The-Next-3.webp" class="mag-item" alt="Cover magazin The Next" onclick="openModal(this, 'mag-modal', 'mag-modal-img')"/>
           </div> 
         </div>
         <button class="mag-nav mag-next" onclick="magNextSlide()">
           &raquo;
         </button>
       </div>
-
-      <!-- Повноекранний перегляд -->
-      <div id="mag-modal" class="mag-modal">
-        <span class="mag-close" onclick="magCloseModal()"></span>
-        <img id="mag-modal-img" />
-      </div>
     </section>
-
+ <!-- Повноекранний перегляд -->
+      <div id="mag-modal" class="modal" onclick="closeModal('mag-modal')">
+  <span class="close" onclick="closeModal('mag-modal')">&times;</span>
+  <img id="mag-modal-img" class="modal-img"/>
+</div>
     <section class="fashion-portfolio-section">
       <h3>Magazingestaltung & Bildbearbeitung in Photoshop</h3>
       <p>
@@ -457,48 +463,49 @@
       </p>
       <div class="fashion-portfolio">
         <div class="fashion-main-image">
-          <img src="bilder/Cover.webp" alt="cover magazin mode" />
+          <img src="bilder/Cover.webp" alt="cover magazin mode"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')"/>
         </div>
         <div class="fashion-description">
           <div class="fashion-gallery">
             <img
               src="bilder/Seite1.webp"
               alt="Seite ArbanAllur magazin"
-              class="fashion-gallery-item"
+              class="fashion-gallery-item"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')"
             />
             <img
               src="bilder/Seite2.webp"
               alt="Seite ArbanAllur magazin"
-              class="fashion-gallery-item"
+              class="fashion-gallery-item"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')"
             />
             <img
               src="bilder/Seite3.webp"
               alt="Seite ArbanAllur magazin"
-              class="fashion-gallery-item"
+              class="fashion-gallery-item"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')"
             />
             <img
               src="bilder/Seite4.webp"
               alt="Seite ArbanAllur magazin"
-              class="fashion-gallery-item"
+              class="fashion-gallery-item"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')"
             />
             <img
               src="bilder/Seite5.webp"
               alt="Seite ArbanAllur magazin"
-              class="fashion-gallery-item"
+              class="fashion-gallery-item"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')"
             />
             <img
               src="bilder/Seite6.webp"
               alt="Seite ArbanAllur magazin"
-              class="fashion-gallery-item"
+              class="fashion-gallery-item"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')"
             />
           </div>
         </div>
       </div>
     </section>
 
-    <div class="fashion-fullscreen" id="fashion-modal">
-      <img id="fashion-modal-img" src="" alt="Open photo" />
-    </div>
+    <div class="fashion-fullscreen" class="modal" id="fashion-modal" onclick="closeModal('fashion-modal')">
+  <span class="close" onclick="closeModal('fashion-modal')">&times;</span>
+  <img id="fashion-modal-img" alt="Open photo" class="modal-img" />
+</div>
     <!-- Контакти -->
     <section id="contact">
       <div class="section_contact">

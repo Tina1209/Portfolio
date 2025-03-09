@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("resize", updateCursorVisibility);
   navigation();
   scrollingPortfolio();
+  magUpdateCarousel();
 });
 
 function navigation() {
@@ -108,18 +109,51 @@ document.querySelector(".prev").addEventListener("click", () => {
   }
 });
 
-// Відкриття модального вікна
-document.querySelectorAll(".certificate-img").forEach((img) => {
-  img.addEventListener("click", function () {
-    document.getElementById("modal").style.display = "block";
-    document.getElementById("modal-img").src = this.src;
+function openModal(img, modalId, modalImgId) {
+  const modal = document.getElementById(modalId);
+  const modalImg = document.getElementById(modalImgId);
+
+  if (modal && modalImg) {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+    document.body.classList.add("no-scroll"); // Блокуємо прокрутку
+  }
+}
+
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.style.display = "none";
+    document.body.classList.remove("no-scroll"); // Відновлюємо прокрутку
+  }
+}
+
+// Додаємо обробник для закриття модального вікна при кліку поза зображенням
+document.querySelectorAll(".modal").forEach((modal) => {
+  modal.addEventListener("click", function (event) {
+    // Перевіряємо, чи клікнули саме на фон (на modal), а не на зображення
+    if (event.target === modal) {
+      closeModal(modal.id);
+    }
   });
 });
 
-document.getElementById("modal").addEventListener("click", function (event) {
-  if (event.target === this) {
-    this.style.display = "none";
-  }
+// Запобігаємо закриттю модального вікна при натисканні на зображення
+document
+  .querySelectorAll(".modal-img, .fashion-modal-img, .certificate-modal-img")
+  .forEach((img) => {
+    img.addEventListener("click", function (event) {
+      event.stopPropagation(); // Зупиняємо поширення події, щоб не закрило вікно
+    });
+  });
+// Додаємо обробник для кнопки закриття
+document.querySelectorAll(".close").forEach((closeBtn) => {
+  closeBtn.addEventListener("click", function () {
+    const modal = this.closest(".modal"); // Знаходимо батьківське модальне вікно
+    if (modal) {
+      closeModal(modal.id);
+    }
+  });
 });
 
 function scrollingPortfolio() {
@@ -193,37 +227,3 @@ function magPrevSlide() {
   magUpdateCarousel();
 }
 
-magItems.forEach((item) => {
-  item.addEventListener("click", function () {
-    if (this.classList.contains("center")) {
-      document.getElementById("mag-modal").style.display = "flex";
-      document.getElementById("mag-modal-img").src = this.src;
-    }
-  });
-});
-
-document
-  .getElementById("mag-modal")
-  .addEventListener("click", function (event) {
-    if (event.target === this) {
-      this.style.display = "none";
-    }
-  });
-
-magUpdateCarousel();
-
-
-document.querySelectorAll(".fashion-gallery-item").forEach((item) => {
-  item.addEventListener("click", function () {
-    document.getElementById("fashion-modal").style.display = "flex";
-    document.getElementById("fashion-modal-img").src = this.src;
-  });
-});
-
-document
-  .getElementById("fashion-modal")
-  .addEventListener("click", function (event) {
-    if (event.target === this) {
-      this.style.display = "none";
-    }
-  });

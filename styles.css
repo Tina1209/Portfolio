@@ -9,6 +9,10 @@ body {
   color: rgb(23, 23, 23);
   background-color: rgb(23, 23, 23);
 }
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
 
 /* Кастомний курсор */
 .cursor {
@@ -415,7 +419,7 @@ button:disabled {
   background-color: rgba(23, 23, 23, 0.8);
 }
 
-.modal-content {
+.fashion-modal-img, .modal-img, .certificate-modal-img {
   display: block;
   max-width: 90%;
   max-height: 90vh;
@@ -431,6 +435,7 @@ button:disabled {
   color: white;
   cursor: pointer;
   transition: 0.3s;
+  z-index: 1000;
 }
 
 .close:hover {
