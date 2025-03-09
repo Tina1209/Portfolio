@@ -91,7 +91,7 @@ const items = document.querySelectorAll(".certificate-img");
 const wrapper = document.querySelector(".certificates-wrapper");
 
 let scrollAmount = 0;
-const maxScroll = items.length * 280 - wrapper.offsetWidth;
+const maxScroll = items.length * 300 - wrapper.offsetWidth;
 
 document.querySelector(".next").addEventListener("click", () => {
   if (scrollAmount < maxScroll) {
