@@ -11,7 +11,8 @@ body {
 }
 .no-scroll {
   overflow: hidden;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 }
 
 /* Кастомний курсор */
@@ -31,15 +32,15 @@ body {
 .navbar {
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 50vw;
+  transform: translateX(-50%); /* Центруємо навігацію */
   width: 100px;
   height: 50px;
   background: rgb(23, 23, 23);
   border-radius: 0 0 50px 50px;
   display: flex;
   justify-content: center;
-  z-index: 1000;
+  z-index: 2000;
   cursor: pointer;
 }
 
@@ -58,7 +59,6 @@ body {
   justify-content: space-between;
   cursor: pointer;
   position: relative;
-  z-index: 1100;
 }
 
 .menu-toggle span {
@@ -69,24 +69,43 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Навігаційне меню */
-.nav-menu {
+/* Обгортка меню (фон, на який можна натиснути для закриття) */
+.nav_wrapper {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(23, 23, 23, 0.96);
+   background: rgba(23, 23, 23, 0.96); /* Темний фон */
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   opacity: 0;
   visibility: hidden;
-  transform: scale(0.9);
-  transition: all 0.3s ease-in-out;
-  z-index: 3;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 999;
 }
+
+/* Відкритий стан */
+.nav_wrapper.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Навігаційне меню */
+.nav-menu {
+ 
+  padding: 20px 40px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Відкриття меню */
+.nav_wrapper.open .nav-menu {
+  transform: scale(1);
+}
+
 .nav-menu ul {
   list-style: none;
   padding: 0;
@@ -113,12 +132,7 @@ body {
 .nav-menu a:hover {
   text-decoration: underline;
 }
-/* Відкритий стан */
-.nav-menu.open {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
-}
+
 
 /* Анімація бургер-іконки */
 .menu-toggle.open span:nth-child(1) {
@@ -347,7 +361,6 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  /* max-width: 1200px; */
   margin: auto;
 }
 .certificates-wrapper {
@@ -387,6 +400,7 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 100;
 }
 
 .prev:hover,
@@ -410,7 +424,7 @@ button:disabled {
 .modal {
   display: none;
   position: fixed;
-  z-index: 10;
+  z-index: 200;
   padding-top: 50px;
   left: 0;
   top: 0;
@@ -837,12 +851,15 @@ display: flex;
 }
 /* секція контакти */
 #contact {
+  position: relative;
   min-height: 100vh;
   height: 100%;
   background-color: rgb(23, 23, 23);
   color: #ffffff;
   padding: 40px 20px;
+  overflow: hidden;
 }
+
 .section_contact {
   display: flex;
   flex-direction: column;
@@ -851,6 +868,8 @@ display: flex;
   min-height: 100vh;
   height: 100%;
   margin: auto;
+  position: relative;
+  z-index: 10;
 }
 
 .section_contact h2 {
@@ -868,6 +887,7 @@ display: flex;
   align-items: center;
   justify-content: center;
   gap: 30px;
+  position: relative;
 }
 
 .contact-link {
@@ -882,14 +902,47 @@ display: flex;
   font-size: 1.4em;
   padding: 12px;
   border-radius: 50%;
-  transition: 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   background: rgba(201, 201, 201, 0.2);
   border: 1px solid #ffb700;
+  position: relative;
+  z-index: 20; /* Посилання над кулями */
+  box-shadow: 0 0 15px rgba(255, 183, 0, 0.3);
 }
 
 .contact-link:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
+  opacity: 1;
+  background: radial-gradient(circle, #ffb700, #ff6a00);
+}
+
+/* Контейнер для куль */
+.bubbles-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5; /* Важливо: кулі під кнопками, але над іншим контентом */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Кулі */
+.bubble {
+  position: absolute;
+  background: radial-gradient(circle, #ffb700, #ff6a00);
+  border-radius: 50%;
   opacity: 0.8;
+  filter: blur(2px);
+  box-shadow: 0 0 8px rgba(255, 106, 0, 0.5);
+  will-change: transform, opacity; /* Оптимізація для анімацій */
+  transition: transform 6s linear;
+}
+
+/* Стиль для притягнутих куль */
+.bubble.attracted {
+  will-change: transform, opacity;
 }
 
 /* Футер */

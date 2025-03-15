@@ -16,7 +16,7 @@
   <body>
     <div class="cursor"></div>
     <!-- Фіксоване напівкругле меню -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
       <div class="menu-toggle" id="menuToggle">
         <span></span>
         <span></span>
@@ -25,14 +25,16 @@
     </nav>
 
     <!-- Список навігації -->
-    <div class="nav-menu" id="navMenu">
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">Über mich</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Kontakt</a></li>
-      </ul>
-    </div>
+   <div class="nav_wrapper" id="navWrapper">
+  <div class="nav-menu" id="navMenu">
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">Über mich</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </div>
+</div>
 
     <!-- Головний екран -->
     <header class="hero" id="hero">
@@ -87,7 +89,7 @@
             <div class="accordion">
               <div class="accordion-item">
                 <button class="accordion-header">
-                  Produktionsleiter/ Produktionsverfahrenstechnik – ОMELIA
+                  <span class="arrow">&#9660;</span> Produktionsleiter/ Produktionsverfahrenstechnik – ОMELIA
                   ATELIER
                 </button>
                 <div class="accordion-content">
@@ -101,7 +103,7 @@
               </div>
               <div class="accordion-item">
                 <button class="accordion-header">
-                  Designer / Bekleidungstechniker – Kuzyomin
+                  <span class="arrow">&#9660;</span> Designer / Bekleidungstechniker – Kuzyomin
                 </button>
                 <div class="accordion-content">
                   <p>
@@ -118,7 +120,7 @@
             <div class="accordion">
               <div class="accordion-item">
                 <button class="accordion-header">
-                  Weiterbildung UX/UI-Webdesign Frontend – WBS Training
+                  <span class="arrow">&#9660;</span> Weiterbildung UX/UI-Webdesign Frontend – WBS Training
                 </button>
                 <div class="accordion-content">
                   <p>
@@ -139,7 +141,7 @@
               </div>
               <div class="accordion-item">
                 <button class="accordion-header">
-                  Master in Verfahrensingenieurwesen – Kiew Nationales
+                  <span class="arrow">&#9660;</span> Master in Verfahrensingenieurwesen – Kiew Nationales
                   Universität für Technologie und Design
                 </button>
                 <div class="accordion-content">
@@ -508,6 +510,9 @@
 </div>
     <!-- Контакти -->
     <section id="contact">
+      <div class="bubbles-wrapper">
+    <!-- Динамічні кулі будуть додаватися через JS -->
+  </div>
       <div class="section_contact">
         <h2>Lassen Sie uns in Kontakt treten!</h2>
         <p>
