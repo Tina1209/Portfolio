@@ -256,88 +256,107 @@ function magPrevSlide() {
 
 function bubbles() {
   const bubbleContainer = document.querySelector(".bubbles-wrapper");
-
-  // Створюємо кульки
+  const containerRect = bubbleContainer.getBoundingClientRect();
   const bubbles = [];
+
+  // Create bubbles with original positioning
   for (let i = 0; i < 25; i++) {
     const bubble = document.createElement("div");
     bubble.classList.add("bubble");
-
-    const size = Math.random() * 60 + 30; // Випадковий розмір від 30 до 90px
+    const size = Math.random() * 60 + 30;
     bubble.style.width = `${size}px`;
     bubble.style.height = `${size}px`;
 
-    // Випадкова початкова позиція
-    const x = Math.random() * 100;
-    const y = Math.random() * 100;
-    bubble.style.left = `${x}%`;
-    bubble.style.top = `${y}%`;
+    // Position bubbles as in original code
+    const x = Math.random() * containerRect.width;
+    const y = Math.random() * containerRect.height;
 
-    // Зберігаємо поточні координати для плавного повернення
-    bubble.dataset.posX = 0;
-    bubble.dataset.posY = 0;
+    bubble.style.left = `${x}px`;
+    bubble.style.top = `${y}px`;
+
+    // Store position and velocity in dataset
+    bubble.dataset.posX = x;
+    bubble.dataset.posY = y;
+    bubble.dataset.velX = (Math.random() - 0.5) * 4;
+    bubble.dataset.velY = (Math.random() - 0.5) * 4;
 
     bubbleContainer.appendChild(bubble);
     bubbles.push(bubble);
   }
 
-  let isHovered = false; // Перевірка, чи наведено на кнопку
+  let isHovered = false;
 
-  // Функція плавного хаотичного руху
   function moveBubbles() {
     bubbles.forEach((bubble) => {
       if (!isHovered) {
-        const prevX = parseFloat(bubble.dataset.posX);
-        const prevY = parseFloat(bubble.dataset.posY);
+        const bubbleSize = parseFloat(bubble.style.width);
+        let x = parseFloat(bubble.dataset.posX);
+        let y = parseFloat(bubble.dataset.posY);
+        let velX = parseFloat(bubble.dataset.velX);
+        let velY = parseFloat(bubble.dataset.velY);
 
-        const deltaX = (Math.random() - 0.5) * 200;
-        const deltaY = (Math.random() - 0.5) * 200;
+        // Update position with original speed factor but more controlled
+        x += velX * 10;
+        y += velY * 10;
 
-        const newX = prevX + deltaX;
-        const newY = prevY + deltaY;
+        // Strict boundary checking (including bubble size)
+        const maxX = containerRect.width - bubbleSize;
+        const maxY = containerRect.height - bubbleSize;
 
-        // Оновлюємо координати для наступного руху
-        bubble.dataset.posX = newX;
-        bubble.dataset.posY = newY;
+        // Check if hitting boundaries and reverse direction
+        if (x <= 0 || x >= maxX) {
+          velX *= -1;
+          // Keep bubble within boundaries
+          x = Math.max(0, Math.min(x, maxX));
+        }
 
-        bubble.style.transition = "transform 6s linear";
-        bubble.style.transform = `translate(${newX}px, ${newY}px)`;
+        if (y <= 0 || y >= maxY) {
+          velY *= -1;
+          // Keep bubble within boundaries
+          y = Math.max(0, Math.min(y, maxY));
+        }
+
+        // Update stored values
+        bubble.dataset.posX = x;
+        bubble.dataset.posY = y;
+        bubble.dataset.velX = velX;
+        bubble.dataset.velY = velY;
+
+        // Use transform for better performance, keeping original transition
+        bubble.style.transition = "transform 3s linear";
+        bubble.style.transform = `translate(${
+          x - parseFloat(bubble.style.left)
+        }px, ${y - parseFloat(bubble.style.top)}px)`;
       }
     });
 
-    setTimeout(moveBubbles, 1000);
+    // Use setTimeout as in original code
+    setTimeout(moveBubbles, 400);
   }
 
-  // Запускаємо рух одразу
+  // Start the animation
   moveBubbles();
 
-  // Обробка подій наведення
+  // Handle hover interactions (unchanged from original)
   document.querySelectorAll(".contact-link").forEach((link) => {
     link.addEventListener("mouseenter", () => {
       isHovered = true;
-
       bubbles.forEach((bubble) => {
         bubble.classList.add("hovered");
         bubble.style.transition = "opacity 0.8s ease-out";
         bubble.style.opacity = "0.1";
       });
-
-      // Додаємо градієнт до кнопки
       link.style.background = "radial-gradient(circle, #ffb700, #ff6a00)";
     });
 
     link.addEventListener("mouseleave", () => {
       isHovered = false;
-
       bubbles.forEach((bubble) => {
         bubble.classList.remove("hovered");
-
-        // Відновлюємо прозорість
         bubble.style.transition = "opacity 0.5s ease-in";
         bubble.style.opacity = "0.8";
-
-         link.style.background = "rgba(201, 201, 201, 0.2)";
       });
+      link.style.background = "rgba(201, 201, 201, 0.2)";
     });
   });
 }

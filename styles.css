@@ -153,6 +153,7 @@ body {
   background: linear-gradient(135deg, #ffe601, #de5900);
   color: rgb(23, 23, 23);
   height: 100vh;
+  overflow: hidden; /* Забезпечує, щоб вміст не виходив за межі контейнера */
 }
 
 .content {
@@ -167,6 +168,8 @@ body {
 
 .text_wrapper {
   position: relative;
+  opacity: 0; /* Початкова невидимість */
+  animation: fadeInLeft 1.5s forwards; /* Анімація для слова "Hallo!" */
 }
 
 .hero h1 {
@@ -176,6 +179,8 @@ body {
   font-weight: 500;
   z-index: 1;
   position: relative;
+  opacity: 0; /* Початкова невидимість */
+  animation: fadeInRight 1.5s 0.5s forwards; /* Анімація для заголовка */
 }
 
 .title_text {
@@ -199,10 +204,14 @@ body {
   font-weight: 500;
   font-size: 1.4em;
   margin-bottom: 10px;
+  opacity: 0; /* Початкова невидимість */
+  animation: fadeInRight 1.5s 1s forwards; /* Анімація для підзаголовка */
 }
 
 .text_hero {
   margin-bottom: 10px;
+  opacity: 0; /* Початкова невидимість */
+  animation: fadeInRight 1.5s 1.5s forwards; /* Анімація для тексту */
 }
 
 .button_hero button {
@@ -216,6 +225,8 @@ body {
   width: 120px;
   height: 120px;
   transition: transform 0.3s ease-out;
+  opacity: 0; /* Початкова невидимість */
+  animation: fadeInUp 1.5s 2s forwards; /* Анімація для кнопки */
 }
 
 .button_hero button:hover {
@@ -230,6 +241,40 @@ body {
   display: flex;
   justify-content: right;
   width: 100%;
+}
+
+/* Анімації */
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Секції */
@@ -471,6 +516,7 @@ button:disabled {
   text-align: center;
   margin-bottom: 26px;
 }
+
 .portfolio-container-padding {
   padding: 0 20px;
   margin-bottom: 20px;
@@ -483,7 +529,20 @@ button:disabled {
   color: #ffb700;
   margin-bottom: 20px;
 }
-
+.portfolio-paragraf {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.portfolio-last-paragraf{
+  margin-bottom: 26px;
+}
+.portfolio-second-paragraf{
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
 /* Грид для вебсайтів та журналів */
 .portfolio-grid {
   display: grid;
@@ -852,12 +911,9 @@ display: flex;
 /* секція контакти */
 #contact {
   position: relative;
-  min-height: 100vh;
-  height: 100%;
   background-color: rgb(23, 23, 23);
   color: #ffffff;
   padding: 40px 20px;
-  overflow: hidden;
 }
 
 .section_contact {
@@ -865,10 +921,10 @@ display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  height: 100%;
   margin: auto;
-  position: relative;
+   min-height: 100vh;
+  height: 100%;
+  width: 100%;
   z-index: 10;
 }
 
@@ -937,7 +993,7 @@ display: flex;
   filter: blur(2px);
   box-shadow: 0 0 8px rgba(255, 106, 0, 0.5);
   will-change: transform, opacity; /* Оптимізація для анімацій */
-  transition: transform 6s linear;
+  transition: transform 3s linear;
 }
 
 /* Стиль для притягнутих куль */
@@ -1025,6 +1081,13 @@ display: flex;
     font-size: 1.8em;
     margin-bottom: 26px;
   }
+
+  .portfolio-paragraf {
+  font-size: 1.2em;
+}
+.portfolio-second-paragraf{
+  font-size: 1.2em;
+}
   .portfolio-container h3 {
     font-size: 1.4em;
   }
@@ -1234,6 +1297,12 @@ display: flex;
   .portfolio-item p {
     font-size: 1.2em;
   }
+  .portfolio-paragraf {
+  font-size: 1.4em;
+}
+.portfolio-second-paragraf{
+  font-size: 1.4em;
+}
   .portfolio-item a {
     font-size: 1.2em;
   }

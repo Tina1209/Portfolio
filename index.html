@@ -2,6 +2,10 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
+  <meta name="description" content="Kristina Liubka ist eine talentierte UI/UX-Designerin, Webdesignerin und Frontend-Entwicklerin. Entdecken Sie ihr Portfolio mit praktischen und ästhetischen Benutzeroberflächen und kreativen Webdesign-Lösungen.">
+
+<meta http-equiv="Cache-Control" content="public, max-age=31536000">
+<meta http-equiv="Pragma" content="cache">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Liubka Kristina Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
@@ -11,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Delius&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href="bilder/favicon.png">
+    <link rel="icon" type="image/png" href="bilder/favicon.png" loading="lazy">
   </head>
   <body>
     <div class="cursor"></div>
@@ -64,7 +68,7 @@
       <div class="about-container">
         <!-- ЛІВИЙ БЛОК -->
         <div class="about-left">
-          <img src="bilder/Avatar.webp" alt="Foto" class="profile-pic" />
+          <img src="bilder/Avatar.webp" alt="Foto" class="profile-pic" loading="lazy" />
           <h3>Persönliches</h3>
           <div class="wrapper_ul_about">
             <ul class="personal-info">
@@ -210,72 +214,84 @@
               alt="Zertifikat 1"
               class="certificate-img"
                onclick="openModal(this, 'modal', 'modal-img')"
+               loading="lazy"
             />
             <img
               src="bilder/MastersDiploma.webp"
               alt="Zertifikat 1"
               class="certificate-img"
                onclick="openModal(this, 'modal', 'modal-img')"
+               loading="lazy"
             />
             <img
               src="bilder/Annerkenung.webp"
               alt="Zertifikat 1"
               class="certificate-img"
                onclick="openModal(this, 'modal', 'modal-img')"
+               loading="lazy"
             />
             <img
               src="bilder/FreeCodeCamp_ResponsiveWebdesign_KristinaLiubka1.webp"
               alt="Zertifikat 1"
               class="certificate-img"
                onclick="openModal(this, 'modal', 'modal-img')"
+               loading="lazy"
             />
             <img
               src="bilder/FreeCodeCamp_JavaScript_KristinaLiubka1.webp"
               alt="Zertifikat 2"
               class="certificate-img"
                onclick="openModal(this, 'modal', 'modal-img')"
+               loading="lazy"
             />
             <img
               src="bilder/AdobeIllustrator_Essential_Skills.webp"
               alt="Zertifikat 3"
               class="certificate-img"
                onclick="openModal(this, 'modal', 'modal-img')"
+               loading="lazy"
             />
              <img
               src="bilder/Adobe_InDesign_Certificat.webp"
               alt="Zertifikat 3"
               class="certificate-img"
                onclick="openModal(this, 'modal', 'modal-img')"
+               loading="lazy"
             />
             <img
               src="bilder/Figma_Grundkurs.webp"
               alt="Zertifikat 4"
               class="certificate-img"
                onclick="openModal(this, 'modal', 'modal-img')"
+               loading="lazy"
             />
             <img
               src="bilder/jQuery_Grundkurs_1.webp"
               alt="Zertifikat 5"
               class="certificate-img"
               onclick="openModal(this, 'modal', 'modal-img')"
+              loading="lazy"
             />
             <img
               src="bilder/jQuery_Grundkurs_2.webp"
               alt="Zertifikat 6"
               class="certificate-img"
                onclick="openModal(this, 'modal', 'modal-img')"
+               loading="lazy"
             />
              <img
               src="bilder/Deutsch_B2.webp"
               alt="Zertifikat 7"
               class="certificate-img"
                onclick="openModal(this, 'modal', 'modal-img')"
+               loading="lazy"
             />
             <img
               src="bilder/OpenLearn.webp"
               alt="Zertifikat 7"
               class="certificate-img"
               onclick="openModal(this, 'modal', 'modal-img')"
+              loading="lazy"
             />
           </div>
         </div>
@@ -286,34 +302,49 @@
     <!-- Модальне вікно для збільшення фото -->
     <div id="modal" class="modal" onclick="closeModal('modal')">
   <span class="close" onclick="closeModal('modal')">&times;</span>
-  <img class="certificate-modal-img" id="modal-img" />
+  <img class="certificate-modal-img" id="modal-img" loading="lazy"/>
 </div>
 
     <!-- Портфоліо -->
     <section id="portfolio" class="portfolio-section">
       <div class="portfolio_wrapper">
         <h2>Mein Portfolio</h2>
+        
         <!-- 1. Webseiten -->
         <div class="portfolio-container portfolio-container-padding">
           <h3>Webseiten</h3>
+           <p class="portfolio-paragraf">
+      In diesem Abschnitt präsentiere ich eine Auswahl meiner ersten Webprojekte, die meine Fähigkeiten in HTML, CSS, JavaScript und modernen Technologien zeigen. 
+      Jedes Projekt spiegelt meine Fortschritte in der Webentwicklung wider – von ansprechendem Design bis hin zu einer benutzerfreundlichen Struktur.
+    </p>
+    <p class="portfolio-second-paragraf">
+      <strong>Anna Müller Beauty Room</strong> – eine stilvolle Website für die Beauty-Branche mit elegantem und modernem Design.  
+      <br />
+      <strong>GutJahr Dachtechnik</strong> – eine übersichtliche Website für ein Bauunternehmen mit klarer Struktur und professioneller Präsentation.  
+      <br />
+      <strong>BodyFit</strong> – ein dynamisches Webprojekt für eine Fitnessmarke, das durch modernes Layout und Interaktivität zu einem aktiven Lebensstil motiviert.  
+    </p>
+    <p class="portfolio-last-paragraf portfolio-paragraf">
+      Einige dieser Projekte befinden sich noch in der Entwicklung, doch sie zeigen bereits meine Fähigkeit, moderne und intuitive Weboberflächen zu gestalten.
+    </p>
           <div class="portfolio-grid">
             <div class="portfolio-item">
               <p>Website Anna Müller Beauty Room</p>
-              <a href="https://tina1209.github.io/Anna_Muller_beauty_room/index.html" target="_blank"><img src="bilder/AnnaMulerBeautyRoom.webp" alt="Webseite 1" /></a>
+              <a href="https://tina1209.github.io/Anna_Muller_beauty_room/index.html" target="_blank"><img src="bilder/AnnaMulerBeautyRoom.webp" alt="Webseite 1" loading="lazy"/></a>
               <a href="https://tina1209.github.io/Anna_Muller_beauty_room/index.html" target="_blank" class="view-btn"
                 >Website ansehen</a
               >
             </div>
             <div class="portfolio-item">
               <p>Website GutJahr Dachtechnik</p>
-              <a href="https://tina1209.github.io/GutJahrDachtechnik/" target="_blank"><img src="bilder/GutJahrDachtechnik.webp" alt="Webseite 2" /></a>
+              <a href="https://tina1209.github.io/GutJahrDachtechnik/" target="_blank"><img src="bilder/GutJahrDachtechnik.webp" alt="Webseite 2" loading="lazy"/></a>
               <a href="https://tina1209.github.io/GutJahrDachtechnik/" target="_blank" class="view-btn"
                 >Website ansehen</a
               >
             </div>
             <div class="portfolio-item">
               <p>Webseite BodyFit</p>
-              <a href="https://tina1209.github.io/BodyFit/" target="_blank"><img src="bilder/BodyFit.webp" alt="Webseite 3" /></a>
+              <a href="https://tina1209.github.io/BodyFit/" target="_blank"><img src="bilder/BodyFit.webp" alt="Webseite 3" loading="lazy"/></a>
               <a href="https://tina1209.github.io/BodyFit/" target="_blank" class="view-btn"
                 >Website ansehen</a
               >
@@ -334,58 +365,56 @@
                 <div class="columns">
                   <div class="column" style="--direction: 1">
                     <div class="image-wrapper">
-                      <img src="bilder/Categories.webp" alt="Image 1" />
-                      <img src="bilder/Categories.webp" alt="Image 1" />
-                      <img src="bilder/Categories.webp" alt="Image 1" />
-                      <img src="bilder/Categories.webp" alt="Image 1" />
-                      <img src="bilder/Categories.webp" alt="Image 1" />
+                      <img src="bilder/Categories.webp" alt="Image 1" loading="lazy"/>
+                      <img src="bilder/Categories.webp" alt="Image 1" loading="lazy"/>
+                      <img src="bilder/Categories.webp" alt="Image 1" loading="lazy"/>
+                      <img src="bilder/Categories.webp" alt="Image 1" loading="lazy"/>
+                      <img src="bilder/Categories.webp" alt="Image 1" loading="lazy"/>
                     </div>
                   </div>
                   <div class="column" style="--direction: -1">
                     <div class="image-wrapper">
-                      <img src="bilder/Search 1 colum.webp" alt="Image 2" />
-                      <img src="bilder/Search 1 colum.webp" alt="Image 2" />
-                      <img src="bilder/Search 1 colum.webp" alt="Image 2" />
-                      <img src="bilder/Search 1 colum.webp" alt="Image 2" />
-                      <img src="bilder/Search 1 colum.webp" alt="Image 2" />
+                      <img src="bilder/Search 1 colum.webp" alt="Image 2" loading="lazy"/>
+                      <img src="bilder/Search 1 colum.webp" alt="Image 2" loading="lazy"/>
+                      <img src="bilder/Search 1 colum.webp" alt="Image 2" loading="lazy"/>
+                      <img src="bilder/Search 1 colum.webp" alt="Image 2" loading="lazy"/>
+                      <img src="bilder/Search 1 colum.webp" alt="Image 2" loading="lazy"/>
                     </div>
                   </div>
                   <div class="column" style="--direction: 1">
                     <div class="image-wrapper">
-                      <img src="bilder/Favourite.webp" alt="Image 3" />
-                      <img src="bilder/Favourite.webp" alt="Image 3" />
-                      <img src="bilder/Favourite.webp" alt="Image 3" />
-                      <img src="bilder/Favourite.webp" alt="Image 3" />
-                      <img src="bilder/Favourite.webp" alt="Image 3" />
+                      <img src="bilder/Favourite.webp" alt="Image 3" loading="lazy"/>
+                      <img src="bilder/Favourite.webp" alt="Image 3" loading="lazy"/>
+                      <img src="bilder/Favourite.webp" alt="Image 3" loading="lazy"/>
+                      <img src="bilder/Favourite.webp" alt="Image 3" loading="lazy"/>
+                      <img src="bilder/Favourite.webp" alt="Image 3" loading="lazy"/>
                     </div>
                   </div>
                   <div class="column" style="--direction: -1">
                     <div class="image-wrapper">
-                      <img src="bilder/Home.webp" alt="Image 4" />
-                      <img src="bilder/Home.webp" alt="Image 4" />
-                      <img src="bilder/Home.webp" alt="Image 4" />
-                      <img src="bilder/Home.webp" alt="Image 4" />
-                      <img src="bilder/Home.webp" alt="Image 4" />
+                      <img src="bilder/Home.webp" alt="Image 4" loading="lazy"/>
+                      <img src="bilder/Home.webp" alt="Image 4" loading="lazy"/>
+                   
                     </div>
                   </div>
                   <div class="column" style="--direction: 1">
                     <div class="image-wrapper">
-                      <img src="bilder/Detail.webp" alt="Image 5" />
-                      <img src="bilder/Detail.webp" alt="Image 5" />
-                      <img src="bilder/Detail.webp" alt="Image 5" />
-                      <img src="bilder/Detail.webp" alt="Image 5" />
-                      <img src="bilder/Detail.webp" alt="Image 5" />
+                      <img src="bilder/Detail.webp" alt="Image 5" loading="lazy"/>
+                      <img src="bilder/Detail.webp" alt="Image 5" loading="lazy"/>
+                      <img src="bilder/Detail.webp" alt="Image 5" loading="lazy"/>
+                      <img src="bilder/Detail.webp" alt="Image 5" loading="lazy"/>
+                      <img src="bilder/Detail.webp" alt="Image 5" loading="lazy"/>
                     </div>
                   </div>
                   <div class="column" style="--direction: -1">
                     <div class="image-wrapper">
-                      <img src="bilder/Search 2 colum.webp" alt="Image 6" />
-                      <img src="bilder/Search 2 colum.webp" alt="Image 6" />
-                      <img src="bilder/Search 2 colum.webp" alt="Image 6" />
-                      <img src="bilder/Search 2 colum.webp" alt="Image 6" />
-                      <img src="bilder/Search 2 colum.webp" alt="Image 6" />
-                      <img src="bilder/Search 2 colum.webp" alt="Image 6" />
-                      <img src="bilder/Search 2 colum.webp" alt="Image 6" />
+                      <img src="bilder/Search 2 colum.webp" alt="Image 6" loading="lazy"/>
+                      <img src="bilder/Search 2 colum.webp" alt="Image 6" loading="lazy"/>
+                      <img src="bilder/Search 2 colum.webp" alt="Image 6" loading="lazy"/>
+                      <img src="bilder/Search 2 colum.webp" alt="Image 6" loading="lazy"/>
+                      <img src="bilder/Search 2 colum.webp" alt="Image 6" loading="lazy"/>
+                      <img src="bilder/Search 2 colum.webp" alt="Image 6" loading="lazy"/>
+                      <img src="bilder/Search 2 colum.webp" alt="Image 6" loading="lazy"/>
                     </div>
                   </div>
                 </div>
@@ -435,15 +464,15 @@
         </button>
         <div class="mag-carousel">
           <div class="mag-track">
-            <img src="bilder/Cover-NeoNest-1.webp" class="mag-item" alt="Cover magazin NeoNest" onclick="openModal(this, 'mag-modal', 'mag-modal-img')"/>
-            <img src="bilder/Cover-NeoNest-2.webp" class="mag-item" alt="Cover magazin NeoNest" onclick="openModal(this, 'mag-modal', 'mag-modal-img')"/>
-            <img src="bilder/Cover-NeoNest-3.webp" class="mag-item" alt="Cover magazin NeoNest" onclick="openModal(this, 'mag-modal', 'mag-modal-img')"/>
-            <img src="bilder/Cover-UrbanAllur-1.webp" class="mag-item" alt="Cover magazin UrbanAllur" onclick="openModal(this, 'mag-modal', 'mag-modal-img')"/>
-            <img src="bilder/Cover-UrbanAllur-2.webp" class="mag-item" alt="Cover magazin UrbanAllur" onclick="openModal(this, 'mag-modal', 'mag-modal-img')"/>
-            <img src="bilder/Cover-UrbanAllur-3.webp" class="mag-item" alt="Cover magazin UrbanAllur" onclick="openModal(this, 'mag-modal', 'mag-modal-img')"/>
-            <img src="bilder/Cover-The-Next-1.webp" class="mag-item" alt="Cover magazin The Next" onclick="openModal(this, 'mag-modal', 'mag-modal-img')"/>
-            <img src="bilder/Cover-The-Next-2.webp" class="mag-item" alt="Cover magazin The Next" onclick="openModal(this, 'mag-modal', 'mag-modal-img')"/>
-            <img src="bilder/Cover-The-Next-3.webp" class="mag-item" alt="Cover magazin The Next" onclick="openModal(this, 'mag-modal', 'mag-modal-img')"/>
+            <img src="bilder/Cover-NeoNest-1.webp" class="mag-item" alt="Cover magazin NeoNest" onclick="openModal(this, 'mag-modal', 'mag-modal-img')" loading="lazy"/>
+            <img src="bilder/Cover-NeoNest-2.webp" class="mag-item" alt="Cover magazin NeoNest" onclick="openModal(this, 'mag-modal', 'mag-modal-img')" loading="lazy"/>
+            <img src="bilder/Cover-NeoNest-3.webp" class="mag-item" alt="Cover magazin NeoNest" onclick="openModal(this, 'mag-modal', 'mag-modal-img')" loading="lazy"/>
+            <img src="bilder/Cover-UrbanAllur-1.webp" class="mag-item" alt="Cover magazin UrbanAllur" onclick="openModal(this, 'mag-modal', 'mag-modal-img')" loading="lazy"/>
+            <img src="bilder/Cover-UrbanAllur-2.webp" class="mag-item" alt="Cover magazin UrbanAllur" onclick="openModal(this, 'mag-modal', 'mag-modal-img')" loading="lazy"/>
+            <img src="bilder/Cover-UrbanAllur-3.webp" class="mag-item" alt="Cover magazin UrbanAllur" onclick="openModal(this, 'mag-modal', 'mag-modal-img')" loading="lazy"/>
+            <img src="bilder/Cover-The-Next-1.webp" class="mag-item" alt="Cover magazin The Next" onclick="openModal(this, 'mag-modal', 'mag-modal-img')" loading="lazy"/>
+            <img src="bilder/Cover-The-Next-2.webp" class="mag-item" alt="Cover magazin The Next" onclick="openModal(this, 'mag-modal', 'mag-modal-img')" loading="lazy"/>
+            <img src="bilder/Cover-The-Next-3.webp" class="mag-item" alt="Cover magazin The Next" onclick="openModal(this, 'mag-modal', 'mag-modal-img')" loading="lazy"/>
           </div> 
         </div>
         <button class="mag-nav mag-next" onclick="magNextSlide()">
@@ -454,7 +483,7 @@
  <!-- Повноекранний перегляд -->
       <div id="mag-modal" class="modal" onclick="closeModal('mag-modal')">
   <span class="close" onclick="closeModal('mag-modal')">&times;</span>
-  <img id="mag-modal-img" class="modal-img"/>
+  <img id="mag-modal-img" class="modal-img" loading="lazy"/>
 </div>
     <section class="fashion-portfolio-section">
       <h3>Magazingestaltung & Bildbearbeitung in Photoshop</h3>
@@ -465,39 +494,39 @@
       </p>
       <div class="fashion-portfolio">
         <div class="fashion-main-image">
-          <img src="bilder/Cover.webp" alt="cover magazin mode"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')"/>
+          <img src="bilder/Cover.webp" alt="cover magazin mode"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')" loading="lazy"/>
         </div>
         <div class="fashion-description">
           <div class="fashion-gallery">
             <img
               src="bilder/Seite1.webp"
               alt="Seite ArbanAllur magazin"
-              class="fashion-gallery-item"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')"
+              class="fashion-gallery-item"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')" loading="lazy"
             />
             <img
               src="bilder/Seite2.webp"
               alt="Seite ArbanAllur magazin"
-              class="fashion-gallery-item"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')"
+              class="fashion-gallery-item"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')" loading="lazy"
             />
             <img
               src="bilder/Seite3.webp"
               alt="Seite ArbanAllur magazin"
-              class="fashion-gallery-item"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')"
+              class="fashion-gallery-item"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')" loading="lazy"
             />
             <img
               src="bilder/Seite4.webp"
               alt="Seite ArbanAllur magazin"
-              class="fashion-gallery-item"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')"
+              class="fashion-gallery-item"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')" loading="lazy"
             />
             <img
               src="bilder/Seite5.webp"
               alt="Seite ArbanAllur magazin"
-              class="fashion-gallery-item"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')"
+              class="fashion-gallery-item"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')" loading="lazy"
             />
             <img
               src="bilder/Seite6.webp"
               alt="Seite ArbanAllur magazin"
-              class="fashion-gallery-item"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')"
+              class="fashion-gallery-item"  onclick="openModal(this, 'fashion-modal', 'fashion-modal-img')" loading="lazy"
             />
           </div>
         </div>
@@ -506,7 +535,7 @@
 
     <div class="fashion-fullscreen" class="modal" id="fashion-modal" onclick="closeModal('fashion-modal')">
   <span class="close" onclick="closeModal('fashion-modal')">&times;</span>
-  <img id="fashion-modal-img" alt="Open photo" class="modal-img" />
+  <img id="fashion-modal-img" alt="Open photo" class="modal-img" loading="lazy" />
 </div>
     <!-- Контакти -->
     <section id="contact">
