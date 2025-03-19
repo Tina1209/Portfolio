@@ -697,15 +697,12 @@ display: flex;
   top: -500px;
   left: 0;
   width: 100%;
-  gap: 10px;
+  height: 500vh; /* Велика висота для прокрутки */
+  background-size: 100% auto; /* Фіксує ширину під колонку */
+  background-repeat: repeat-y; /* Дозволяє прокрутку */
+  background-position: center; /* Вирівнює зображення */
 }
 
-.image-wrapper img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
 .photoshop-section {
   padding: 20px;
   height: 100%;
@@ -855,7 +852,7 @@ display: flex;
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .fashion-main-image {
@@ -1118,7 +1115,7 @@ display: flex;
 }
   .columns {
     top: -70vh;
-    left: -4vw;
+    left: -3vw;
     gap: 10px;
     width: 80vw;
     height: 300%;
@@ -1152,7 +1149,7 @@ display: flex;
   /* секція журнал */
   .fashion-portfolio {
     flex-direction: row;
-    height: 100vh;
+    height: 100%;
   }
 
   .fashion-main-image {
@@ -1162,12 +1159,8 @@ display: flex;
   .fashion-description {
     width: 50%;
     text-align: left;
-    padding-left: 20px;
   }
 
-  .fashion-gallery {
-    gap: 15px;
-  }
   .fashion-portfolio-section h3 {
     font-size: 1.4em;
   }
@@ -1330,7 +1323,7 @@ display: flex;
 }
   .columns {
     top: -70vh;
-    left: -2vw;
+    left: -3vw;
     gap: 10px;
     width: 80vw;
     height: 300%;
@@ -1364,9 +1357,7 @@ display: flex;
   .fashion-portfolio {
     flex-direction: row;
     height: 100%;
-    
   }
-
   .fashion-main-image {
     width: 50%;
     height: 100%;
@@ -1380,13 +1371,8 @@ display: flex;
   .fashion-description {
     width: 50%;
     text-align: left;
-    padding-left: 20px;
-
   }
 
-  .fashion-gallery {
-    gap: 15px;
-  }
   .fashion-portfolio-section h3 {
     font-size: 1.8em;
   }

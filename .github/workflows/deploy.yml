@@ -1,0 +1,34 @@
+name: Minify and Deploy
+
+on:
+  push:
+    branches:
+      - main  # Виконувати при пуші в main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Клонування репозиторію
+        uses: actions/checkout@v3
+
+      - name: 🔧 Встановлення Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: 📦 Встановлення minify-пакета
+        run: npm install -g minify
+
+      - name: ✂️ Мінімізація HTML, CSS, JS
+        run: |
+          minify index.html > index.min.html && mv index.min.html index.html
+          minify styles.css > styles.min.css && mv styles.min.css styles.css
+          minify script.js > script.min.js && mv script.min.js script.js
+
+      - name: 🚀 Деплой на GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: .

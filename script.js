@@ -24,6 +24,12 @@ document.addEventListener("DOMContentLoaded", function () {
   scrollingPortfolio();
   magUpdateCarousel();
   bubbles();
+
+
+   document.querySelectorAll(".image-wrapper").forEach((wrapper) => {
+     let imageUrl = wrapper.getAttribute("data-image");
+     wrapper.style.backgroundImage = `url(${imageUrl})`;
+   });
 });
 
 // 🔹 Навігація
@@ -190,28 +196,26 @@ document
 // 🔹 Карусель (портфоліо)
 function scrollingPortfolio() {
   document.addEventListener("scroll", () => {
-    let portfolioSection = document.querySelector(".portfolio-section");
+    let portfolioSection = document.querySelector(".scrolling-container");
     if (!portfolioSection) return;
 
-    let rect = portfolioSection.getBoundingClientRect();
+    let scrollY = window.scrollY;
+    let isMobile = window.innerWidth <= 768;
 
-    if (rect.top <= window.innerHeight && rect.bottom >= 0) {
-      let scrollY = window.scrollY;
-      let isMobile = window.innerWidth <= 768;
+    document.querySelectorAll(".scrolling-container .column").forEach((col) => {
+      let wrapper = col.querySelector(".image-wrapper");
+      if (wrapper) {
+        let direction =
+          parseFloat(col.style.getPropertyValue("--direction")) || 1;
+        let speed = isMobile ? 0.1 : 0.3;
 
-      document
-        .querySelectorAll(".scrolling-container .column")
-        .forEach((col) => {
-          let wrapper = col.querySelector(".image-wrapper");
-          if (wrapper) {
-            let direction =
-              parseFloat(col.style.getPropertyValue("--direction")) || 1;
-            let speed = isMobile ? 0.1 : 0.3;
-            let moveY = (scrollY * speed * direction) % wrapper.clientHeight;
-            wrapper.style.transform = `translateY(${moveY}px)`;
-          }
-        });
-    }
+        // Рівномірний старт кожного стовпчика без зміщення
+        let baseOffset = -500; // Вирівнюємо всі колонки
+
+        let moveY = (scrollY * speed * direction + baseOffset) % 500;
+        wrapper.style.transform = `translateY(${moveY}px)`;
+      }
+    });
   });
 }
 
@@ -360,3 +364,15 @@ function bubbles() {
     });
   });
 }
+
+window.addEventListener("pagehide", () => {
+  if (socket) {
+    socket.close();
+  }
+});
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden && socket) {
+    socket.close();
+  }
+});
