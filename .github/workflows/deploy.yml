@@ -27,8 +27,14 @@ jobs:
           uglifyjs script.js -o script.js --compress --mangle
           html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --minify-css true --minify-js true -o index.html index.html
 
+      - name: Налаштування git
+        run: |
+          git config --global user.name "Tina1209"  # Задайте ваше ім'я
+          git config --global user.email "64481636+Tina1209@users.noreply.github.com"  # Задайте ваш email
+
       - name: Деплой на GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: .  
+          folder: .  # Зазначаємо папку для деплою (корінь репозиторію)
+          token: ${{ secrets.GH_TOKEN }}  # Використання секрету для токену доступу
