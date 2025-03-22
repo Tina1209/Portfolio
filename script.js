@@ -372,15 +372,3 @@ function bubbles() {
     });
   });
 }
-
-window.addEventListener("pagehide", () => {
-  if (socket) {
-    socket.close();
-  }
-});
-
-document.addEventListener("visibilitychange", () => {
-  if (document.hidden && socket) {
-    socket.close();
-  }
-});
