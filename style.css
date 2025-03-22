@@ -1,3 +1,56 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-Medium.woff2') format('woff2'),
+       url('fonts/Poppins-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('fonts/Poppins-MediumItalic.woff2') format('woff2'),
+       url('fonts/Poppins-MediumItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Regular.woff2') format('woff2'),
+       url('fonts/Montserrat-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Italic.woff2') format('woff2'),
+       url('fonts/Montserrat-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Bold.woff2') format('woff2'),
+       url('fonts/Montserrat-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-BoldItalic.woff2') format('woff2'),
+       url('fonts/Montserrat-BoldItalic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Black.woff2') format('woff2'),
+       url('fonts/Montserrat-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -173,7 +226,7 @@ body {
 }
 
 .hero h1 {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-size: 2.4em;
   margin-bottom: 10px;
   font-weight: 500;
@@ -200,7 +253,7 @@ body {
 }
 
 .hero h2 {
-  font-family: "Poppins", serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 1.4em;
   margin-bottom: 10px;

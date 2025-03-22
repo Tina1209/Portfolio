@@ -16,7 +16,7 @@ jobs:
       - name: Встановити Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Встановити пакети для мінімізації
         run: npm install -g clean-css-cli uglify-js html-minifier
@@ -36,5 +36,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: .  # Зазначаємо папку для деплою (корінь репозиторію)
-          token: ${{ secrets.GH_TOKEN }}  # Використання секрету для токену доступу
+          folder: . # Зазначаємо папку для деплою (корінь репозиторію)
+          token: ${ secrets.GH_TOKEN } # Використання секрету для токену доступу
