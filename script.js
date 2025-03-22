@@ -195,12 +195,16 @@ document
 
 // 🔹 Карусель (портфоліо)
 function scrollingPortfolio() {
+  let lastScrollY = window.scrollY; // Запам'ятовуємо початкову позицію
+
   document.addEventListener("scroll", () => {
     let portfolioSection = document.querySelector(".scrolling-container");
     if (!portfolioSection) return;
 
     let scrollY = window.scrollY;
     let isMobile = window.innerWidth <= 768;
+    let deltaY = scrollY - lastScrollY; // Зміна положення прокрутки
+    lastScrollY = scrollY; // Оновлюємо останню позицію
 
     document.querySelectorAll(".scrolling-container .column").forEach((col) => {
       let wrapper = col.querySelector(".image-wrapper");
@@ -209,11 +213,15 @@ function scrollingPortfolio() {
           parseFloat(col.style.getPropertyValue("--direction")) || 1;
         let speed = isMobile ? 0.1 : 0.3;
 
-        // Рівномірний старт кожного стовпчика без зміщення
-        let baseOffset = -500; // Вирівнюємо всі колонки
+        // Визначаємо поточний translateY
+        let currentY = parseFloat(wrapper.dataset.offset) || 0;
 
-        let moveY = (scrollY * speed * direction + baseOffset) % 500;
-        wrapper.style.transform = `translateY(${moveY}px)`;
+        // Плавний рух без стрибків
+        let newY = currentY + deltaY * speed * direction;
+
+        // Зберігаємо нове значення
+        wrapper.dataset.offset = newY;
+        wrapper.style.transform = `translateY(${newY}px)`;
       }
     });
   });
